@@ -31,14 +31,14 @@
                             <button (click)="borraHeroe(k)" type="button" name="buttoneliminar" class="btn btn-outline-danger"> Borrar</button>
                         </td>
                     </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
                 </tbody>
             </table>
+            <div *ngIf="(heroes  | keys).length === 0 && !loading" class="alert alert-success" role="alert">
+                <strong>No hay más registros</strong>
+            </div>
+            <div *ngIf="loading" class="alert alert-warning" role="alert">
+                <strong>Cargando</strong>
+            </div>
         </div>
     </div>
 </div>
